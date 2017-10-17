@@ -13,5 +13,14 @@
         android:layout_weight="1"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="?attr/actionBarTheme"
+        android:elevation="4dp"
+        />
+
+    <fragment android:name="com.finger_painting.fingerpaintedaquarelle.ThumbnailsFragment"
+        android:id="@+id/my_ThumbnailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 </LinearLayout>

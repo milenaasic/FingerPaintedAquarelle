@@ -5,14 +5,14 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
+
 import com.finger_painting.fingerpaintedaquarelle.Data.Utilities;
-/**
- * Created by Milena on 14/10/2017.
- */
+
 
 public class AutoFitRecyclerView extends RecyclerView {
 
     private GridLayoutManager manager;
+    private static final String DEBUG_TAG="AutoFitRecyclerView";
 
 
     public AutoFitRecyclerView(Context context) {
@@ -41,26 +41,23 @@ public class AutoFitRecyclerView extends RecyclerView {
         super.onMeasure(widthSpec, heightSpec);
         int measuredWidth=getMeasuredWidth();
         int measuredHeight=getMeasuredHeight();
-        Log.d ("Autofit myrec width",((Integer)measuredWidth).toString());
-        Log.d ("Autofit myrec height",((Integer)measuredHeight).toString());
-        int colums=columnNumber(measuredWidth,Utilities.getThisScreenResolution());
-        manager.setSpanCount(colums);
-        Log.d ("Autofit columns",((Integer)colums).toString());
+        Log.d (DEBUG_TAG,((Integer)measuredWidth).toString());
+        Log.d (DEBUG_TAG,((Integer)measuredHeight).toString());
+        float myDensity=getContext().getResources().getDisplayMetrics().density;
+        Utilities.setThisScreenResolution(myDensity);
+        //int colums=columnNumber(measuredWidth,myDensity);
+        float columns=measuredWidth/myDensity/120;
+        int colNum=Math.round(columns);
+        manager.setSpanCount(colNum);
+        Log.d (DEBUG_TAG,((Integer)colNum).toString());
     }
 
-
+    /* izračunava broj kolona
     private int columnNumber(float width, float density){
         float columns=width/density/120;
-        Log.d("Autofit col pre round",((Float)columns).toString());
+        Log.d(DEBUG_TAG,((Float)columns).toString());
         int colNum=Math.round(columns);
-        Log.d("Autofit col posle round",((Integer)colNum).toString());
-        int remain=((int)(width/density))-(colNum*120);
-
-        Log.d("Autofit remain",((Integer)remain).toString());
-        Log.d ("Autofit column number",((Float)columns).toString());
         return (int)colNum;
-
-
-    }
+    }*/
 
 }
