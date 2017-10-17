@@ -7,7 +7,7 @@ package com.finger_painting.fingerpaintedaquarelle.Data;
 public class Utilities {
 
     // ovde cuvam screen resolution
-    protected static float thisScreenResolution;
+    private static float thisScreenResolution;
 
 
     // metoda koja setuje screenResolution

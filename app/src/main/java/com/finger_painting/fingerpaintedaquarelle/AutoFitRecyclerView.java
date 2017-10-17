@@ -5,7 +5,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
-
+import com.finger_painting.fingerpaintedaquarelle.Data.Utilities;
 /**
  * Created by Milena on 14/10/2017.
  */
@@ -43,7 +43,7 @@ public class AutoFitRecyclerView extends RecyclerView {
         int measuredHeight=getMeasuredHeight();
         Log.d ("Autofit myrec width",((Integer)measuredWidth).toString());
         Log.d ("Autofit myrec height",((Integer)measuredHeight).toString());
-        int colums=columnNumber(measuredWidth,Data.Utilities.density);
+        int colums=columnNumber(measuredWidth,Utilities.getThisScreenResolution());
         manager.setSpanCount(colums);
         Log.d ("Autofit columns",((Integer)colums).toString());
     }
