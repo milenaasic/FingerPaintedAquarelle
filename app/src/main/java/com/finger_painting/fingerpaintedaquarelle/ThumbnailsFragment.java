@@ -41,6 +41,8 @@ public class ThumbnailsFragment extends Fragment implements MyAdapter.ViewHolder
         mRecyclerView.setHasFixedSize(true);
         mAdapter=new MyAdapter(ThumbnailImagesDataSource.getThumbnailImages(), this);
         mRecyclerView.setAdapter(mAdapter);
+        RecyclerView.ItemDecoration decoration=new RecyclerViewDecoration(getContext());
+        mRecyclerView.addItemDecoration(decoration);
         return rootView;
     }
 
