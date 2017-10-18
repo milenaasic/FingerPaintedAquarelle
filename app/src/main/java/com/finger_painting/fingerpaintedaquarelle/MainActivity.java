@@ -1,8 +1,10 @@
 package com.finger_painting.fingerpaintedaquarelle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ThumbnailsFragment.OnThumbnailsFragmentInteractionListener{
 
@@ -16,18 +18,17 @@ public class MainActivity extends AppCompatActivity implements ThumbnailsFragmen
         Toolbar myToolbar=(Toolbar)findViewById(R.id.my_Toolbar);
         setSupportActionBar(myToolbar);
 
-        // izracunaj screenresolution i setuj ga u Utilities klasi
-        // da li ovo treba da ide pre pozivanja main layout-a, ipak sam ovo izračunala u AutoFitRecyclerView-u
-        //float myDensity=getResources().getDisplayMetrics().density;
-        //Utilities.setThisScreenResolution(myDensity);
-
-
-
-
     }
 
     @Override
     public void onThumbnailsFragmentInteraction(int n) {
+        Toast.makeText(this," pozicija iz Main"+n,Toast.LENGTH_SHORT).show();
 
+        if(n==0){
+            Intent intent=new Intent();
+            // ako je odabrana 0 pošalji u Single picture informaciju koji je broj slike odabran
+           // ali ne treba mi permission
+
+        }
     }
 }

@@ -4,10 +4,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.finger_painting.fingerpaintedaquarelle.Data.ThumbnailImagesDataSource;
 
@@ -37,15 +37,14 @@ public class ThumbnailsFragment extends Fragment implements MyAdapter.ViewHolder
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_thumbnails, container, false);
-        mRecyclerView = v.findViewById(R.id.my_AutoFitRecyclerView);
+        View rootView=inflater.inflate(R.layout.fragment_thumbnails, container, false);
+        mRecyclerView = rootView.findViewById(R.id.my_AutoFitRecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mAdapter=new MyAdapter(ThumbnailImagesDataSource.getThumbnailImages(), this);
-        //mAdapter=new MyAdapter(new int[]{R.drawable.slika0_thumb,R.drawable.slika1_thumb,
-               // R.drawable.slika2_thumb}, this);
-
         mRecyclerView.setAdapter(mAdapter);
-        return v;
+        RecyclerView.ItemDecoration decoration=new RecyclerViewDecoration(getContext());
+        mRecyclerView.addItemDecoration(decoration);
+        return rootView;
     }
 
 
@@ -71,7 +70,8 @@ public class ThumbnailsFragment extends Fragment implements MyAdapter.ViewHolder
     // metoda koja se pokrece kada je pritisnut jedan od thumbnail-ova iz recycerView-a
     @Override
     public void onViewHolderClicked(int n) {
-
+        Toast.makeText(getContext(),"prisitsnuta pozicija"+n,Toast.LENGTH_SHORT).show();
+        mListener.onThumbnailsFragmentInteraction(n);
     }
 
 

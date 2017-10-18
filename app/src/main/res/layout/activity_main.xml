@@ -10,19 +10,16 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="?attr/actionBarTheme"
         android:elevation="4dp"
         />
 
     <fragment android:name="com.finger_painting.fingerpaintedaquarelle.ThumbnailsFragment"
         android:id="@+id/my_ThumbnailsFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>
