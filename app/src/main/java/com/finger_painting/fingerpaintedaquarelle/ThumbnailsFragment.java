@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.finger_painting.fingerpaintedaquarelle.Data.ThumbnailImagesDataSource;
 
@@ -69,12 +70,13 @@ public class ThumbnailsFragment extends Fragment implements MyAdapter.ViewHolder
     // metoda koja se pokrece kada je pritisnut jedan od thumbnail-ova iz recycerView-a
     @Override
     public void onViewHolderClicked(int n) {
-
+        Toast.makeText(getContext(),"prisitsnuta pozicija"+n,Toast.LENGTH_SHORT).show();
+        mListener.onThumbnailsFragmentInteraction(n);
     }
 
 
      interface OnThumbnailsFragmentInteractionListener {
-        // TODO: Update argument type and name
+
         void onThumbnailsFragmentInteraction(int n);
     }
 }
