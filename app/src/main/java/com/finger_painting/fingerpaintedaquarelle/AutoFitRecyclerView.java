@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 
+import com.finger_painting.fingerpaintedaquarelle.Data.ThumbnailImagesDataSource;
 import com.finger_painting.fingerpaintedaquarelle.Data.Utilities;
 
 
@@ -34,6 +35,7 @@ public class AutoFitRecyclerView extends RecyclerView {
 
         manager = new GridLayoutManager(getContext(), 1);
         setLayoutManager(manager);
+
     }
 
     @Override

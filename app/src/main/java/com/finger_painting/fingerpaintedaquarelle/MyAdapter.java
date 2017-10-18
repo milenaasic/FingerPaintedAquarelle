@@ -2,6 +2,7 @@ package com.finger_painting.fingerpaintedaquarelle;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
      MyAdapter (int[] data , ViewHolderClickListener listener){
 
         mDataSet=data;
+         Log.v("myadapter",((Integer)data[2]).toString());
         mClickViewHolderListener=listener;
     }
 
@@ -29,7 +31,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
          ViewHolder(LinearLayout v){
             super(v);
             CardView cardView=(CardView)v.getChildAt(0);
-            mImageView=(ImageView)v.getChildAt(1);
+            mImageView=(ImageView)cardView.getChildAt(0);
+             Log.v("myadapterimage",mImageView.toString());
             mCardView=cardView;
             v.setOnClickListener(this);
         }
@@ -53,7 +56,9 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mImageView.setImageResource(mDataSet[position]);
+        ImageView image=holder.mImageView;
+               // image.setImageResource(R.drawable.slika0_thumb);
+        image.setImageResource(mDataSet[position]);
     }
 
     @Override
