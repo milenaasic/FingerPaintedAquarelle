@@ -16,14 +16,6 @@ public class MainActivity extends AppCompatActivity implements ThumbnailsFragmen
         Toolbar myToolbar=(Toolbar)findViewById(R.id.my_Toolbar);
         setSupportActionBar(myToolbar);
 
-        // izracunaj screenresolution i setuj ga u Utilities klasi
-        // da li ovo treba da ide pre pozivanja main layout-a, ipak sam ovo izračunala u AutoFitRecyclerView-u
-        //float myDensity=getResources().getDisplayMetrics().density;
-        //Utilities.setThisScreenResolution(myDensity);
-
-
-
-
     }
 
     @Override

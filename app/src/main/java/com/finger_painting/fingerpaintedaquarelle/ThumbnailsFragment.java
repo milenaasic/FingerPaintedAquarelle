@@ -36,12 +36,12 @@ public class ThumbnailsFragment extends Fragment implements MyAdapter.ViewHolder
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        mRecyclerView = container.findViewById(R.id.my_AutoFitRecyclerView);
+        View rootView=inflater.inflate(R.layout.fragment_thumbnails, container, false);
+        mRecyclerView = rootView.findViewById(R.id.my_AutoFitRecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mAdapter=new MyAdapter(ThumbnailImagesDataSource.getThumbnailImages(), this);
         mRecyclerView.setAdapter(mAdapter);
-        return inflater.inflate(R.layout.fragment_thumbnails, container, false);
+        return rootView;
     }
 
 

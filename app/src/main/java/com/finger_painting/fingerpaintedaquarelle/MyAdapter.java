@@ -29,7 +29,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
          ViewHolder(LinearLayout v){
             super(v);
             CardView cardView=(CardView)v.getChildAt(0);
-            mImageView=(ImageView)v.getChildAt(1);
+            mImageView=(ImageView)cardView.getChildAt(0);
             mCardView=cardView;
             v.setOnClickListener(this);
         }
@@ -47,8 +47,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>  {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LinearLayout linearLayout=(LinearLayout)LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_item,parent,false);
-        ViewHolder vh=new ViewHolder(linearLayout);
-        return vh;
+        return new ViewHolder(linearLayout);
     }
 
     @Override
