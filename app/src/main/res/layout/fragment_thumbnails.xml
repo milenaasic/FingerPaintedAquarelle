@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.finger_painting.fingerpaintedaquarelle.ThumbnailsFragment">
 
 
@@ -9,7 +10,7 @@
         android:id="@+id/my_AutoFitRecyclerView"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
     </com.finger_painting.fingerpaintedaquarelle.AutoFitRecyclerView>
 
 </LinearLayout>

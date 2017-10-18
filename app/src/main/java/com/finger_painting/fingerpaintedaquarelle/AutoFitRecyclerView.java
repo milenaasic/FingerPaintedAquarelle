@@ -45,19 +45,12 @@ public class AutoFitRecyclerView extends RecyclerView {
         Log.d (DEBUG_TAG,((Integer)measuredHeight).toString());
         float myDensity=getContext().getResources().getDisplayMetrics().density;
         Utilities.setThisScreenResolution(myDensity);
-        //int colums=columnNumber(measuredWidth,myDensity);
         float columns=measuredWidth/myDensity/120;
         int colNum=Math.round(columns);
         manager.setSpanCount(colNum);
         Log.d (DEBUG_TAG,((Integer)colNum).toString());
     }
 
-    /* izračunava broj kolona
-    private int columnNumber(float width, float density){
-        float columns=width/density/120;
-        Log.d(DEBUG_TAG,((Float)columns).toString());
-        int colNum=Math.round(columns);
-        return (int)colNum;
-    }*/
+
 
 }
