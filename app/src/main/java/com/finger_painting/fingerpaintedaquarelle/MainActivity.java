@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ThumbnailsFragment.OnThumbnailsFragmentInteractionListener{
 
-
+    public static final String PICTURENB_TO_DOWNLOAD="picture_nb_to_download";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +24,12 @@ public class MainActivity extends AppCompatActivity implements ThumbnailsFragmen
     public void onThumbnailsFragmentInteraction(int n) {
         Toast.makeText(this," pozicija iz Main"+n,Toast.LENGTH_SHORT).show();
 
-        if(n==0){
-            Intent intent=new Intent();
-            // ako je odabrana 0 pošalji u Single picture informaciju koji je broj slike odabran
-           // ali ne treba mi permission
+        //if(n==0){
+            Intent intent=new Intent(this, SinglePictureActivity.class);
+            intent.putExtra(PICTURENB_TO_DOWNLOAD,0);
 
-        }
+            startActivity(intent);
+
+        //}
     }
 }

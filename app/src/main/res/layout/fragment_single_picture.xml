@@ -1,13 +1,40 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.finger_painting.fingerpaintedaquarelle.SinglePictureFragment"
+    android:id="@+id/my_coordinatorlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.finger_painting.fingerpaintedaquarelle.SinglePictureFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+           <android.support.design.widget.FloatingActionButton
+            android:id="@+id/FABSetWallpaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            app:fabSize="normal"
+            app:srcCompat="@android:drawable/ic_menu_set_as" />
 
-</FrameLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/FABDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_save"
+            app:elevation="16dp"
+            app:fabSize="normal"
+            app:srcCompat="@color/myColorAccent" />
+
+        <ImageView
+            android:id="@+id/singlePictureFragmentImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/slika0_full" />
+
+</android.support.design.widget.CoordinatorLayout >
